@@ -1,0 +1,162 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f8f8b7;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.tab-button {
+  background-color: #030303;
+  border: none;
+  margin: 0 15px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  padding: 15px 20px;
+  border-radius: 5px 5px 0 0;
+  margin-top: 5px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 120px;
+  margin-top: 50px;
+}
+
+.event {
+  border: 1px solid #faf7f7;
+  background-color: #fff;
+  margin: 10px;
+  box-shadow: 0 1px 9px rgba(0, 0, 0, 0.068);
+}
+
+div.event {
+  padding-bottom: 15px;
+}
+
+.event img {
+  width: 100%;
+}
+
+.event-title {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.event-details {
+  margin-top: 5px;
+}
+
+.event-details span {
+  margin-right: 10px;
+}
+
+.tab-button:focus {
+  background-color: #faf7f7;
+  color: black;
+}
+
+.events-details {
+  color: rgba(165, 23, 23, 0.842);
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.event div {
+  padding: 5px;
+}
+
+.event-favorite-button {
+  /* Estilos para el ícono de corazón vacío */
+  display: inline-block;
+  border-radius: 100px;
+  background-color: #c5c1c14d;
+  width: 28px;
+  height: 24px;
+  text-align: center;
+  margin-left: 17rem;
+  background-image: url(path/to/heart-empty-icon.png); /* Reemplaza con la ruta correcta a tu ícono */
+  background-size: cover;
+  cursor: pointer;
+}
+
+.event-favorite-button.filled {
+  /* Estilos para el ícono de corazón lleno */
+  background-image: url(path/to/heart-filled-icon.png); /* Reemplaza con la ruta correcta a tu ícono lleno */
+}
+
+/* styles.css */
+
+.event-button-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px; 
+}
+
+.event-interested-button {
+  background-color: #a8afaf56;
+  color: #168585;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+}
+
+.event-going-button {
+  background-color: #168585;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.account  {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #168585;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+}
+
+.accounttwo {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #168585;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+
+.event-remove-button {
+  background-color: #a8afaf56;
+  color: #168585;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+}
+
+
