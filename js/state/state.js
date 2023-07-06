@@ -8,72 +8,54 @@ const state = (function () {
       goingEvents: [],
     };
 
-    function getFavorites() {
-      return stateData.favorites.slice();
-    }
-
-    function getInterestedEvents() {
-      return stateData.interestedEvents.slice();
-    }
-
-    function getGoingEvents() {
-      return stateData.goingEvents.slice();
-    }
-
-    function addFavorite(event) {
-      stateData.favorites.push(event);
-    }
-
-    function removeFavorite(eventId) {
-      const index = stateData.favorites.findIndex(
-        (favorite) => favorite.id === eventId
-      );
-      if (index > -1) {
-        stateData.favorites.splice(index, 1);
-      }
-    }
-
-    function addInterestedEvent(event) {
-      stateData.interestedEvents.push(event);
-    }
-
-    function removeInterestedEvent(eventId) {
-      const index = stateData.interestedEvents.findIndex(
-        (interestedEvent) => interestedEvent.id === eventId
-      );
-      if (index > -1) {
-        stateData.interestedEvents.splice(index, 1);
-      }
-    }
-
-    function addGoingEvent(event) {
-      stateData.goingEvents.push(event);
-    }
-
-    function removeGoingEvent(eventId) {
-      const index = stateData.goingEvents.findIndex(
-        (goingEvent) => goingEvent.id === eventId
-      );
-      if (index > -1) {
-        stateData.goingEvents.splice(index, 1);
-      }
-    }
-
     return {
-      getFavorites,
-      getInterestedEvents,
-      getGoingEvents,
-      addFavorite,
-      removeFavorite,
-      addInterestedEvent,
-      removeInterestedEvent,
-      addGoingEvent,
-      removeGoingEvent,
+      getFavorites() {
+        return stateData.favorites.slice();
+      },
+      getInterestedEvents() {
+        return stateData.interestedEvents.slice();
+      },
+      getGoingEvents() {
+        return stateData.goingEvents.slice();
+      },
+      addFavorite(event) {
+        stateData.favorites.push(event);
+      },
+      removeFavorite(eventId) {
+        const index = stateData.favorites.findIndex(
+          (favorite) => favorite.id === eventId
+        );
+        if (index > -1) {
+          stateData.favorites.splice(index, 1);
+        }
+      },
+      addInterestedEvent(event) {
+        stateData.interestedEvents.push(event);
+      },
+      removeInterestedEvent(eventId) {
+        const index = stateData.interestedEvents.findIndex(
+          (interestedEvent) => interestedEvent.id === eventId
+        );
+        if (index > -1) {
+          stateData.interestedEvents.splice(index, 1);
+        }
+      },
+      addGoingEvent(event) {
+        stateData.goingEvents.push(event);
+      },
+      removeGoingEvent(eventId) {
+        const index = stateData.goingEvents.findIndex(
+          (goingEvent) => goingEvent.id === eventId
+        );
+        if (index > -1) {
+          stateData.goingEvents.splice(index, 1);
+        }
+      },
     };
   }
 
   return {
-    getInstance: function () {
+    getInstance() {
       if (!instance) {
         instance = createState();
       }

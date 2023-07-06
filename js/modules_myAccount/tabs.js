@@ -1,4 +1,4 @@
-import { showEventsByTab } from "./events.js";
+import { renderEvent } from "../modules_myAccount/events.js";   
 
 export function initializeTabs() {
   const tabsContainer = document.getElementById("tabs-container");
@@ -11,3 +11,5 @@ export function initializeTabs() {
     }
   });
 }
+
+
