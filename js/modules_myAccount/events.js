@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
       }
 
-      container.style.display = "flex";
+      container.style.display = "grid";
       tab.classList.add("active");
 
     });
