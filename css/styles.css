@@ -73,7 +73,6 @@ div.event {
 }
 
 .event-favorite-button {
-  /* Estilos para el ícono de corazón vacío */
   display: inline-block;
   border-radius: 100px;
   background-color: #c5c1c14d;
@@ -81,17 +80,14 @@ div.event {
   height: 24px;
   text-align: center;
   margin-left: 17rem;
-  background-image: url(path/to/heart-empty-icon.png); /* Reemplaza con la ruta correcta a tu ícono */
+  background-image: url(path/to/heart-empty-icon.png); 
   background-size: cover;
   cursor: pointer;
 }
 
 .event-favorite-button.filled {
-  /* Estilos para el ícono de corazón lleno */
-  background-image: url(path/to/heart-filled-icon.png); /* Reemplaza con la ruta correcta a tu ícono lleno */
+  background-image: url(path/to/heart-filled-icon.png);
 }
-
-/* styles.css */
 
 .event-button-container {
   display: flex;
@@ -145,10 +141,10 @@ div.event {
   cursor: pointer;
   position: absolute;
   left: 10px;
-  top: 13px;
+  top: 12px;
 }
 
-.event-remove-button {
+.remove-button {
   background-color: #a8afaf56;
   color: #168585;
   padding: 8px 16px;

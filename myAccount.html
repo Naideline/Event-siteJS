@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Account</title>
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
-</head>
-<body>
-  <div id="tabs-container" class="tabs">
-    <a class="accounttwo" href="index.html"> Back to events</a>
-  </div>
-  <div id="events-grid" class="events-grid"></div>
-  
-  <script type="module" src="./js/myAccount.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <title>My Account</title>
+  </head>
+  <body>
+    <nav>
+      <div class="tabs">
+        <div id="tabs-container" class="tabs">
+          <a class="accounttwo" href="index.html"> Back to events</a>
+        </div>
+        <button class="tab-button" data-category="interested">Interested</button>
+        <button class="tab-button" data-category="going">Going</button>
+        <button class="tab-button" data-category="favorites">Favorites</button>
+      </div>
+    </nav>
+
+    <div id="interested-events" class="events-grid"></div>
+    <div id="going-events" class="events-grid"></div>
+    <div id="favorites-events" class="events-grid"></div>
+
+    <script type="module" src="./js/myAccount.js"></script>
+  </body>
 </html>
