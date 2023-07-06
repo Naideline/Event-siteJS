@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const interestedEventsContainer = document.getElementById("interested-events");
   const goingEventsContainer = document.getElementById("going-events");
   const favoritesEventsContainer = document.getElementById("favorites-events");
-  
+
   const tabs = document.querySelectorAll(".tab-button");
   const eventsGrids = document.querySelectorAll(".events-grid");
 
@@ -60,31 +60,42 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
       }
 
-      container.style.display = "grid";
+      container.style.display = "flex";
       tab.classList.add("active");
-
     });
   });
 
   interestedEventsContainer.style.display = "grid";
   goingEventsContainer.style.display = "none";
   favoritesEventsContainer.style.display = "none";
-  
+
   const interestedEvents = getItemsFromLocalStorage("interestedEvents");
   const goingEvents = getItemsFromLocalStorage("goingEvents");
-  const favoritesEvents = getItemsFromLocalStorage("favorites"); 
+  const favoritesEvents = getItemsFromLocalStorage("favorites");
 
-  interestedEvents.forEach(event => {
-    renderEvent(event, interestedEventsContainer);
-  });
+  if (interestedEvents.length === 0) {
+    interestedEventsContainer.innerHTML = "<p>There are no events in your interested</p>";
+  } else {
+    interestedEvents.forEach(event => {
+      renderEvent(event, interestedEventsContainer);
+    });
+  }
 
-  goingEvents.forEach(event => {
-    renderEvent(event, goingEventsContainer);
-  });
+  if (goingEvents.length === 0) {
+    goingEventsContainer.innerHTML = "<p>There are no events in your going</p>";
+  } else {
+    goingEvents.forEach(event => {
+      renderEvent(event, goingEventsContainer);
+    });
+  }
 
-  favoritesEvents.forEach(event => {
-    renderEvent(event, favoritesEventsContainer);
-  });
+  if (favoritesEvents.length === 0) {
+    favoritesEventsContainer.innerHTML = "<p>There are no events in your favorites</p>";
+  } else {
+    favoritesEvents.forEach(event => {
+      renderEvent(event, favoritesEventsContainer);
+    });
+  }
 });
 
 function removeEvent(event) {
@@ -100,4 +111,3 @@ function removeEvent(event) {
   saveItemsToLocalStorage("goingEvents", updatedGoingEvents);
   saveItemsToLocalStorage("favoritesEvents", updatedFavoritesEvents);
 }
-
