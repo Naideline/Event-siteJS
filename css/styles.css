@@ -156,3 +156,47 @@ div.event {
 }
 
 
+.calendar {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#prevBtn,
+#nextBtn {
+  font-size: 16px;
+  padding: 5px 10px;
+  color: #168585;
+  background-color: #fff;
+}
+
+#daysTable {
+  width: 100%;
+}
+
+#daysTable th {
+  text-align: center;
+  padding: 15px;
+}
+
+#daysTable td {
+  text-align: start;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 100px; 
+}
+
+#daysTable td.today {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+
+

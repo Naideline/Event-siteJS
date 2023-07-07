@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <title>My Account</title>
   </head>
@@ -17,12 +17,23 @@
         <button class="tab-button" data-category="interested">Interested</button>
         <button class="tab-button" data-category="going">Going</button>
         <button class="tab-button" data-category="favorites">Favorites</button>
+        <button class="tab-button" data-category="calendar">Calendar</button>
       </div>
     </nav>
-
     <div id="interested-events" class="events-grid"></div>
     <div id="going-events" class="events-grid"></div>
     <div id="favorites-events" class="events-grid"></div>
+   
+    <div id="calendar-events" class="events-grid">  
+      <div id="calendar">
+        <div id="header">
+          <button id="prevBtn">&lt;</button>
+          <h2 id="monthYear"></h2>
+          <button id="nextBtn">&gt;</button>
+        </div>
+        <table id="daysTable"></table>
+      </div>
+    </div>
 
     <script type="module" src="./js/myAccount.js"></script>
   </body>
