@@ -8,13 +8,12 @@ export function saveItemsToLocalStorage(key, items) {
   localStorage.setItem(key, itemsJson);
 }
 
-  
-  export function getEventsFromLocalStorage(category) {
-    const eventsJson = localStorage.getItem(category);
-    return eventsJson ? JSON.parse(eventsJson) : [];
-  }
-  
-  export function saveEventsToLocalStorage(category, events) {
-    const eventsJson = JSON.stringify(events);
-    localStorage.setItem(category, eventsJson);
-  }
+export function getEventsFromLocalStorage(category) {
+  const eventsJson = localStorage.getItem(category);
+  return eventsJson ? JSON.parse(eventsJson) : [];
+}
+
+export function saveEventsToLocalStorage(category, events) {
+  const eventsJson = JSON.stringify(events);
+  localStorage.setItem(category, eventsJson);
+}

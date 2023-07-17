@@ -8,7 +8,7 @@ const cache = new Proxy(
       }
       return Reflect.get(target, category);
     },
-  }
+  },
 );
 
 async function fetchEventData(category) {
@@ -20,7 +20,6 @@ async function fetchEventData(category) {
     const data = await response.json();
     return data;
   } catch (error) {
-    
     return [];
   }
 }

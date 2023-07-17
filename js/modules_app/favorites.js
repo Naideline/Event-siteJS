@@ -1,4 +1,4 @@
-import { getItemsFromLocalStorage, saveItemsToLocalStorage } from "../utils/localStorage.js";
+import {getItemsFromLocalStorage, saveItemsToLocalStorage} from "../utils/localStorage.js";
 
 export function isEventFavorite(event) {
   const favorites = getItemsFromLocalStorage("favorites");
@@ -6,7 +6,6 @@ export function isEventFavorite(event) {
 }
 
 export function createFavoriteButton(event) {
-  const favorites = getItemsFromLocalStorage("favorites");
   const isFavorite = isEventFavorite(event);
 
   const eventFavoriteButton = document.createElement("span");
@@ -25,14 +24,16 @@ export function createFavoriteButton(event) {
 
 export function toggleFavorite(event, button) {
   const favorites = getItemsFromLocalStorage("favorites");
-  const eventIndex = favorites.findIndex((favorite) => favorite.id === event.id);
+  const eventIndex = favorites.findIndex(
+    (favorite) => favorite.id === event.id,
+  );
 
   if (eventIndex > -1) {
     favorites.splice(eventIndex, 1);
-    button.querySelector('i').className = "far fa-heart"; 
+    button.querySelector("i").className = "far fa-heart";
   } else {
     favorites.push(event);
-    button.querySelector('i').className = "fas fa-heart";
+    button.querySelector("i").className = "fas fa-heart";
   }
 
   saveItemsToLocalStorage("favorites", favorites);

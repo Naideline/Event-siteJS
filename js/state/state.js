@@ -23,7 +23,7 @@ const state = (function () {
       },
       removeFavorite(eventId) {
         const index = stateData.favorites.findIndex(
-          (favorite) => favorite.id === eventId
+          (favorite) => favorite.id === eventId,
         );
         if (index > -1) {
           stateData.favorites.splice(index, 1);
@@ -34,7 +34,7 @@ const state = (function () {
       },
       removeInterestedEvent(eventId) {
         const index = stateData.interestedEvents.findIndex(
-          (interestedEvent) => interestedEvent.id === eventId
+          (interestedEvent) => interestedEvent.id === eventId,
         );
         if (index > -1) {
           stateData.interestedEvents.splice(index, 1);
@@ -45,7 +45,7 @@ const state = (function () {
       },
       removeGoingEvent(eventId) {
         const index = stateData.goingEvents.findIndex(
-          (goingEvent) => goingEvent.id === eventId
+          (goingEvent) => goingEvent.id === eventId,
         );
         if (index > -1) {
           stateData.goingEvents.splice(index, 1);

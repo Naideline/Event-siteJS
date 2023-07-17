@@ -29,28 +29,28 @@ export function initializeCalendar() {
     monthYearElement.textContent =
       getMonthName(currentMonth) + " " + currentYear;
 
-    var firstDay = new Date(currentYear, currentMonth, 1);
-    var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    var startDay = firstDay.getDay();
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const startDay = firstDay.getDay();
 
     daysTable.innerHTML = "";
 
-    var daysOfWeekRow = document.createElement("tr");
-    for (var i = 0; i < 7; i++) {
-      var dayOfWeekCell = document.createElement("th");
+    const daysOfWeekRow = document.createElement("tr");
+    for (let i = 0; i < 7; i++) {
+      const dayOfWeekCell = document.createElement("th");
       dayOfWeekCell.textContent = getDayOfWeekName(i);
       daysOfWeekRow.appendChild(dayOfWeekCell);
     }
     daysTable.appendChild(daysOfWeekRow);
 
-    var row = document.createElement("tr");
-    for (var i = 0; i < startDay; i++) {
-      var emptyCell = document.createElement("td");
+    let row = document.createElement("tr");
+    for (let i = 0; i < startDay; i++) {
+      const emptyCell = document.createElement("td");
       row.appendChild(emptyCell);
     }
 
-    for (var day = 1; day <= daysInMonth; day++) {
-      var cell = document.createElement("td");
+    for (let day = 1; day <= daysInMonth; day++) {
+      const cell = document.createElement("td");
       cell.textContent = day;
       row.appendChild(cell);
 
@@ -64,7 +64,7 @@ export function initializeCalendar() {
   }
 
   function getMonthName(month) {
-    var months = [
+    const months = [
       "January",
       "February",
       "March",
@@ -82,7 +82,7 @@ export function initializeCalendar() {
   }
 
   function getDayOfWeekName(dayOfWeek) {
-    var daysOfWeek = [
+    const daysOfWeek = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -94,7 +94,7 @@ export function initializeCalendar() {
     return daysOfWeek[dayOfWeek];
   }
 
-  var currentDate = new Date();
+  const currentDate = new Date();
   currentMonth = currentDate.getMonth();
   currentYear = currentDate.getFullYear();
 
