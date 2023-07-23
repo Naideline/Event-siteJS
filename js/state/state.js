@@ -59,7 +59,18 @@ const state = (function () {
       if (!instance) {
         instance = createState();
       }
-      return instance;
+      return {
+        // Exponemos métodos para acceder y modificar los datos del state, no los datos directamente
+        getFavorites: instance.getFavorites,
+        getInterestedEvents: instance.getInterestedEvents,
+        getGoingEvents: instance.getGoingEvents,
+        addFavorite: instance.addFavorite,
+        removeFavorite: instance.removeFavorite,
+        addInterestedEvent: instance.addInterestedEvent,
+        removeInterestedEvent: instance.removeInterestedEvent,
+        addGoingEvent: instance.addGoingEvent,
+        removeGoingEvent: instance.removeGoingEvent,
+      };
     },
   };
 })();

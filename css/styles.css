@@ -155,12 +155,6 @@ div.event {
   text-align: center;
 }
 
-.calendar {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
 #header {
   display: flex;
   justify-content: space-between;
@@ -178,11 +172,14 @@ div.event {
 
 #daysTable {
   width: 100%;
+  table-layout: fixed; 
+  border-collapse: collapse; 
 }
 
 #daysTable th {
   text-align: center;
   padding: 15px;
+  width: 100px; 
 }
 
 #daysTable td {
@@ -190,9 +187,31 @@ div.event {
   padding: 10px;
   border: 1px solid #ccc;
   height: 100px;
+  width: 100px; 
 }
 
 #daysTable td.today {
   font-weight: bold;
   background-color: #f0f0f0;
 }
+
+.event-card {
+  padding: 10px;
+  border: 1px solid #0f04043a;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.favorite-event {
+  background-color: pink;
+}
+
+.interested-event {
+  background-color: rgb(255, 255, 135);
+}
+
+.going-event {
+  background-color: rgb(12, 243, 147);
+}
+
+

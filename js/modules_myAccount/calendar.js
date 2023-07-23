@@ -1,8 +1,12 @@
+import { getItemsFromLocalStorage } from "../utils/localStorage.js";
+import { renderEvent } from "../modules_myAccount/eventRenderer.js";
+
 export function initializeCalendar() {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
   const monthYearElement = document.getElementById("monthYear");
   const daysTable = document.getElementById("daysTable");
+  const eventCardContainer = document.getElementById("event-card-container");
 
   let currentMonth;
   let currentYear;
@@ -29,6 +33,20 @@ export function initializeCalendar() {
     monthYearElement.textContent =
       getMonthName(currentMonth) + " " + currentYear;
 
+    const interestedEvents = getItemsFromLocalStorage("interestedEvents");
+    const goingEvents = getItemsFromLocalStorage("goingEvents");
+    const favoritesEvents = getItemsFromLocalStorage("favoritesEvents");
+
+    const eventsForCurrentMonth = interestedEvents
+      .concat(goingEvents, favoritesEvents)
+      .filter((event) => {
+        const eventDate = new Date(event.date);
+        return (
+          eventDate.getMonth() === currentMonth &&
+          eventDate.getFullYear() === currentYear
+        );
+      });
+
     const firstDay = new Date(currentYear, currentMonth, 1);
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const startDay = firstDay.getDay();
@@ -53,6 +71,40 @@ export function initializeCalendar() {
       const cell = document.createElement("td");
       cell.textContent = day;
       row.appendChild(cell);
+
+      const eventsForCurrentDay = eventsForCurrentMonth.filter((event) => {
+        const eventDate = new Date(event.date);
+        return eventDate.getDate() === day;
+      });
+
+      const eventsContainer = document.createElement("div");
+      eventsContainer.className = "events-container";
+
+      eventsForCurrentDay.forEach((event) => {
+        const eventCard = document.createElement("div");
+        eventCard.className = "event-card";
+
+        if (goingEvents.some((goingEvent) => goingEvent.id === event.id)) {
+          eventCard.classList.add("going-event");
+        } else if (
+          interestedEvents.some((interestedEvent) => interestedEvent.id === event.id)
+        ) {
+          eventCard.classList.add("interested-event");
+        } else if (
+          favoritesEvents.some((favoriteEvent) => favoriteEvent.id === event.id)
+        ) {
+          eventCard.classList.add("favorite-event");
+        }
+
+        eventCard.textContent = event.title;
+        eventsContainer.appendChild(eventCard);
+
+        eventCard.addEventListener("click", () => {
+          showEventCard(event); 
+        });
+      });
+
+      cell.appendChild(eventsContainer);
 
       if ((startDay + day - 1) % 7 === 6) {
         daysTable.appendChild(row);
@@ -100,4 +152,16 @@ export function initializeCalendar() {
 
   monthYearElement.textContent = getMonthName(currentMonth) + " " + currentYear;
   updateCalendar();
+
+  function showEventCard(event) {
+
+    eventCardContainer.innerHTML = ""; 
+
+    const eventCard = renderEvent(event, eventCardContainer); 
+
+    const removeButton = eventCard.querySelector(".remove-button");
+    if (removeButton) {
+      removeButton.style.display = "none";
+    }
+  }
 }
