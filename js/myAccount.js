@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeTabs();
   initializeCalendar();
 
-  const interestedEventsContainer =
-    document.getElementById("interested-events");
+  const interestedEventsContainer = document.getElementById("interested-events");
   const goingEventsContainer = document.getElementById("going-events");
   const favoritesEventsContainer = document.getElementById("favorites-events");
 

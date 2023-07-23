@@ -1,4 +1,4 @@
-import { getItemsFromLocalStorage, saveItemsToLocalStorage} from "../utils/localStorage.js";
+import { getItemsFromLocalStorage, saveItemsToLocalStorage } from "../utils/localStorage.js";
 import { formatDate } from "../utils/formatDate.js";
 import { formatPrice } from "../utils/formatPrice.js";
 
@@ -9,9 +9,7 @@ export function renderEvent(event, container) {
     <img src="${event.image}">
     <div class="event-title">${event.title}</div>
     <div class="events-details">${formatDate(event.date)}</div>
-    <div class="event-details">${event.location.address} • ${
-      event.location.city
-    }, ${event.location.state}</div>
+    <div class="event-details">${event.location.address} • ${ event.location.city}, ${event.location.state}</div>
     <div class="event-details">${formatPrice(event.price)}</div>
     <button class="remove-button">Remove</button>
   `;

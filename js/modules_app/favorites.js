@@ -1,4 +1,7 @@
-import {getItemsFromLocalStorage, saveItemsToLocalStorage} from "../utils/localStorage.js";
+import {
+  getItemsFromLocalStorage,
+  saveItemsToLocalStorage,
+} from "../utils/localStorage.js";
 
 export function isEventFavorite(event) {
   const favorites = getItemsFromLocalStorage("favorites");
